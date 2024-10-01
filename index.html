@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Online Bookstore</title>
+    <style>
+        /* CSS to remove underline from all links */
+        a {
+            text-decoration: none; /* Remove underline */
+            color: #007BFF; /* Link color */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Optional: underline on hover */
+        }
+    </style>
+    
+        
+</head>
+<body>
+    <header>
+        <div class="logo">BookStore</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="book-details.html">Book Details</a></li>
+                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Featured Books</h1>
+        <div class="book-list">
+            <div class="book">
+                <a href="book-details.html?id=1">
+                <img src="https://source.boomplaymusic.com/group10/M00/03/28/5e88b340bba5487ebf38970a1da27661_320_320.jpg" alt="Book Title 1">
+                <h2><a href="./book-details.html">Ikigai</a></h2>
+                <p> It's a concept that encourages people to discover what truly matters to them and to live a life filled with purpose and joy.</p>
+                </a>
+               
+            </div>
+            <div class="book">
+                <a href="book-details.html?id=2"></a>
+                <img src="https://m.media-amazon.com/images/I/61HAE8zahLL._AC_UF1000,1000_QL80_.jpg" alt="Book Title 2">
+                <h2><a href="./book-details.html">Alchemist</a></h2>
+                <p> Andalusian shepherd boy who yearns to travel in search of a worldly treasure. </p>
+            </a>
+                
+            </div>
+            <div class="book">
+                <a href="book-details.html?id=3"></a>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH2mGh5PVY-1zK7NdHT0uBLmamIUrgSlPK_w&s" alt="Book Title 2">
+                <h2><a href="./book-details.html">Psychology of money</a></h2>
+                <p> the key to managing your relationship with money and having a happy and fulfilling life is twofold </p>
+            </a>
+            </div>
+            <div class="book">
+                <a href="book-details.html?id=4"></a>
+                <img src="https://m.media-amazon.com/images/I/81BE7eeKzAL._AC_UF1000,1000_QL80_.jpg" alt="Book Title 2">
+                <h2><a href="./book-details.html">Rich dad poor dad</a></h2>
+                <p>Rich Dad Poor Dad is the ways in which both men shaped his thoughts about money and investing.</p>
+            </a>
+            </div>
+            <div class="book">
+                <a href="book-details.html?id=5"></a>
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/51c744FXpTL._AC_UL200_SR200,200_.jpg" alt="Book Title 2">
+                <h2><a href="./book-details.html">Its starts with us</a></h2>
+                <p>It's a story about feeling loved for the first time and giving the love you believe others deserve from you. </p>
+            </a>
+            </div>
+            <div class="book">
+                <a href="book-details.html?id=6"></a>
+                <img src="https://i0.wp.com/highschool.latimes.com/wp-content/uploads/2022/10/it-ends-w-us.png?fit=2273%2C1515&ssl=1" alt="Book Title 2">
+                <h2><a href="./book-details.html">Its end with us</a></h2>
+                <p>It Ends with Us is a book that follows a girl named Lily who has just moved and is ready to start her life after college.</p>
+            </a>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: support@bookstore.com</p>
+        </div>
+        <p>&copy; 2024 BookStore. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addToCart(title, price) {
+            // Redirect to shopping cart page with item data in URL
+            const cartItem = encodeURIComponent(JSON.stringify({ title, price }));
+            window.location.href = `shopping-cart.html?item=${cartItem}`;
+        }
+
+        </script>
+    
+
+</body>
+</html>

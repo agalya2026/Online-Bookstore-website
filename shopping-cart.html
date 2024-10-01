@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .cart-items {
+            max-width: 600px;
+            margin: auto;
+            list-style-type: none;
+            padding: 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .cart-item img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Your Shopping Cart</h1>
+<ul class="cart-items" id="cart-items"></ul>
+<div class="total" id="total-price"></div>
+<button onclick="clearCart()">Clear Cart</button>
+<a href="index.html">Back to Homepage</a>
+
+<script>
+    function loadCart() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalPriceContainer = document.getElementById('total-price');
+        
+        cartItemsContainer.innerHTML = '';
+        let totalPrice = 0;
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<li>Your cart is empty.</li>';
+            totalPriceContainer.textContent = '';
+            return;
+        }
+
+        cart.forEach((item, index) => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('cart-item');
+            listItem.innerHTML = `
+                <div style="display: flex; align-items: center;">
+                    <img src="${item.image}" alt="${item.title}">
+                    <span>${item.title} - $${item.price.toFixed(2)}</span>
+                </div>
+                <button onclick="removeItem(${index})">Remove</button>
+            `;
+            cartItemsContainer.appendChild(listItem);
+            totalPrice += item.price;
+        });
+
+        totalPriceContainer.textContent = 'Total Price: $' + totalPrice.toFixed(2);
+    }
+
+    function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart();
+    }
+
+    function clearCart() {
+        localStorage.removeItem('cart');
+        loadCart();
+    }
+
+    loadCart();
+</script>
+
+</body>
+</html>

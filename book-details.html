@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Book Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .book-details {
+            text-align: center;
+        }
+        .book-details img {
+            max-width: 300px;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">BookStore</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="book-details" id="book-details">
+
+        
+        <div><h1>Ikigai</h1>
+        <img src="https://source.boomplaymusic.com/group10/M00/03/28/5e88b340bba5487ebf38970a1da27661_320_320.jpg" alt="Ikigai"></div>
+        
+        <div><p>'Ikigai' by Hector Garcia and Francesc Miralles explores the Japanese concept of finding one's purpose in life by analyzing the habits and beliefs of the world's longest-living people. Through case studies, the book offers practical insights on how to live a more fulfilling life. It's a concept that encourages people to discover what truly matters to them and to live a life filled with purpose and joy.</p>
+            <button class="button" onclick="addToCart('Ikigai' ,'350')">Add to Cart</button></div>
+        <div class="booklist">
+
+
+
+           <h1>Alchemist</h1>
+            <img src="https://static.toiimg.com/thumb/106838151/106838151.jpg?height=746&width=420&resizemode=76&imgsize=51544" alt="Book Title 2">
+            
+            <p>Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest will lead him to riches far different—and far more satisfying—than he ever imagined.</p>
+            <p><b>₹320/-</b></p>
+            
+            <button class="button" onclick="addToCart( 'Alchemist','19.99')">Add to Cart</button>
+
+            <div class="booklist1">
+            <h1>Psychology of money</h1>
+        
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH2mGh5PVY-1zK7NdHT0uBLmamIUrgSlPK_w&s" alt="Book Title 2">
+            <p> the key to managing your relationship with money and having a happy and fulfilling life is twofold </p>
+            <p><b>₹399/-</b></p>
+            <button class="button" onclick="addToCart(2)">Add to Cart</button>
+            <div class="booklist2">
+            <h1>Rich dad poor dad</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb4FWAqoIRN3nyxGAl1dA4RIuDhLU84E6vSw&s" alt="Book Title 2">
+            
+            <p>Rich Dad Poor Dad is Robert's story of growing up with two dads — his real father and the father of his best friend, his rich dad — and the ways in which both men shaped his thoughts about money and investing.</p>
+            <p><b>₹390/-</b></p>
+            <button class="button" onclick="addToCart(2)">Add to Cart</button>
+
+            <div class="booklist3"></div>
+        <h1>Its starts with us</h1>
+            <img src="https://images-eu.ssl-images-amazon.com/images/I/51c744FXpTL._AC_UL200_SR200,200_.jpg" alt="Book Title 2">
+            
+            <p>It's a story about feeling loved for the first time and giving the love you believe others deserve from you. This book explains that not all parental love is unconditional and not all romantic love will end.</p>
+            <p><b>₹480/-</b></p>
+            <button class="button" onclick="addToCart(2)">Add to Cart</button>
+
+            <div class="booklist4">
+        <h1>Its end with us</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA6g0fCp4xtM67ZxynMJQ6lje12tgh5g5Vxg&s" alt="Book Title 2">
+            
+            <p>It Ends with Us is a book that follows a girl named Lily who has just moved and is ready to start her life after college. Lily then meets a guy named Ryle and she falls for him.</p>
+            <p><b>₹450/-</b></p>
+            <button class="button" onclick="addToCart(2)">Add to Cart</button>
+        </div>
+    </div>
+    </div>
+
+
+        
+</main>
+
+
+
+  
+
+    <footer>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: support@bookstore.com</p>
+        </div>
+        <p>&copy; 2024 BookStore. All rights reserved.</p>
+     </footer>
+
+   
+      
+      
+    </div>
+    
+    <a href="index.html">Back to Homepage</a>
+    <a href="shopping-cart.html">Go to Cart</a>
+
+<script>
+    function addToCart(title,  price) {
+        const cartItem = { title, price };
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(cartItem);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(title + ' has been added to your cart!');
+    }
+</script>
+</body>
+</html>
